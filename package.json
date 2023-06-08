@@ -1,0 +1,17 @@
+{
+  "name": "caa_lp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://alineaferreira.github.io/caa_lp/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}

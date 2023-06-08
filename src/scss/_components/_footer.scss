@@ -1,0 +1,48 @@
+/*===========================================*/
+/* This is the file with footer style
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+
+@mixin transition5s() {
+	-webkit-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+}
+
+footer {
+	padding: 25px 0;
+	background-color: #1d202b;
+	font-size: 12.25px;
+	font-weight: 400;
+
+	p {
+		color: #686d80;
+		margin: 0;
+		float: left;
+
+		span {
+			color: #FFF;
+		}
+	}
+
+	.anatel {
+		float: right;
+	}
+}
+
+@media (max-width: 767px){
+	footer {
+		.copyright {
+			float: none;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		.anatel {
+			float: none;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
