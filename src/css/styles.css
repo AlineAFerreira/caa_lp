@@ -1,0 +1,981 @@
+@charset "UTF-8";
+/*
+Author: Aline Alves Ferreira
+08.Jun.2023
+*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+/*********************************
+* General 
+**********************************/
+html,
+body {
+  background-color: #FFFFFF;
+  color: #898989;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  line-height: normal;
+  font-weight: 400;
+}
+
+body {
+  padding-top: 115px;
+}
+@media (max-width: 767px) {
+  body {
+    padding-top: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+/*********************************
+* HELPER CLASSES 
+**********************************/
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-alert {
+  color: #EA4335;
+}
+
+.top_space10 {
+  margin-top: 10px;
+}
+
+.top_space15 {
+  margin-top: 15px;
+}
+
+.top_space20 {
+  margin-top: 20px;
+}
+
+.top_space30 {
+  margin-top: 30px;
+}
+
+/*********************************
+* PAGE TITLE HEADERS
+**********************************/
+h1.heading,
+h2.heading {
+  color: #0e4887;
+  font-family: "Poppins", sans-serif;
+}
+
+h1.heading {
+  position: relative;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+}
+h1.heading:after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: #0e4887;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 767px) {
+  h1.heading {
+    font-size: 25px;
+  }
+}
+
+h2.heading {
+  font-size: 25px;
+}
+@media (max-width: 767px) {
+  h2.heading {
+    font-size: 20px;
+  }
+}
+
+/*********************************
+* BACK TO TOP  
+**********************************/
+#backToTop {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  text-align: center;
+  background-color: rgba(14, 72, 135, 0.5);
+  border-radius: 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  z-index: 4;
+  transition: all 1s;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  -ms-transition: all 1s;
+}
+#backToTop:hover {
+  background-color: #0e4887;
+}
+#backToTop.show {
+  opacity: 1;
+  filter: alpha(opacity=1);
+}
+#backToTop i {
+  vertical-align: -13px;
+  font-size: 22px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/*********************************
+* BOTÃO PADRÃO - SIMPLES  
+**********************************/
+label[id$=-error] {
+  color: #EA4335 !important;
+  font-size: 13px;
+  position: absolute;
+  margin-top: 0 !important;
+  font-weight: 500;
+  text-transform: initial !important;
+}
+
+/*********************************
+* MODAL CONTACT  
+**********************************/
+#contactModal .modal-header {
+  background: #0e4887;
+  color: #FFFFFF;
+}
+#contactModal .modal-header .modal-title {
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1.6px;
+}
+#contactModal .modal-header .close {
+  margin-top: -2px;
+  color: #FFF;
+  opacity: 1;
+  text-shadow: none;
+  font-size: 25px;
+  outline: none;
+}
+#contactModal .modal-header .close:hover {
+  opacity: 0.8;
+}
+#contactModal .modal-body .form-group {
+  margin-bottom: 20px;
+}
+#contactModal .modal-body .form-group label {
+  font-weight: 500;
+}
+#contactModal .alert {
+  display: none;
+}
+#contactModal .alert i {
+  font-size: 25px;
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+#contactModal .modal-footer button {
+  outline: none;
+}
+#contactModal .modal-footer button[type=button] {
+  border: 1px solid #898989;
+  display: inline-block;
+  width: 210px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  color: #898989;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+#contactModal .modal-footer button[type=button]:hover {
+  text-decoration: none;
+  background-color: #898989;
+  color: #FFFFFF;
+}
+#contactModal .modal-footer button[type=submit] {
+  background: #343434;
+  border: 1px solid #343434;
+  display: inline-block;
+  width: 210px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+#contactModal .modal-footer button[type=submit]:hover {
+  text-decoration: none;
+  background-color: #FFFFFF;
+  color: #343434;
+}
+
+/*********************************
+*  CONTACT  ASIDE
+**********************************/
+#asideLeft .social-media,
+#asideLeft .box-contact {
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+  margin-top: 20px;
+}
+#asideLeft .social-media .social-links {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+#asideLeft .social-media .social-links li {
+  display: inline;
+}
+#asideLeft .social-media .social-links li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 44px;
+  text-align: center;
+  color: #212121;
+  margin: 0 5px;
+  background-color: #FFFFFF;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+#asideLeft .social-media .social-links li a:hover, #asideLeft .social-media .social-links li a:focus {
+  text-decoration: none;
+  outline: none;
+  background-color: #0e4887;
+  color: #FFFFFF;
+}
+#asideLeft .social-media .social-links li a i {
+  font-size: 20px;
+}
+#asideLeft .box-contact a {
+  display: block;
+  padding: 5px 0;
+  color: #898989;
+}
+#asideLeft .box-contact a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+#asideLeft .box-contact a:hover i {
+  border-color: #000000;
+}
+#asideLeft .box-contact a i {
+  font-size: 20px;
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #898989;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+
+/*===========================================*/
+/* This is the file with header style
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+#headerBar {
+  width: 100%;
+  height: 115px;
+  background: #F2F2F2;
+  position: fixed;
+  z-index: 3;
+  top: 0px;
+  box-shadow: 0px 7px 16px 0px rgba(50, 50, 50, 0.1);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+}
+#headerBar.cbp-af-header-shrink {
+  height: 80px;
+  opacity: 0.95;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+}
+#headerBar.cbp-af-header-shrink .navbar-header a.navbar-brand {
+  height: initial;
+}
+#headerBar.cbp-af-header-shrink .navbar-header a.navbar-brand img {
+  width: 90px;
+}
+#headerBar .header-top {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#headerBar .header-top .navbar-header a.navbar-brand {
+  display: inline-block;
+  padding: 4px;
+  height: auto;
+}
+#headerBar .header-top .navbar-header a.navbar-brand .box-img {
+  height: 100%;
+  margin-left: 50px;
+}
+#headerBar .header-top .navbar-collapse {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0;
+}
+#headerBar ul.navbar-nav {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+}
+#headerBar ul.navbar-nav a {
+  padding: 17px 14px;
+  font-size: 14px;
+  color: #444545;
+  cursor: pointer;
+}
+#headerBar ul.navbar-nav a:hover, #headerBar ul.navbar-nav a:active, #headerBar ul.navbar-nav a:focus {
+  color: #0e4887;
+  background-color: transparent;
+  outline: none;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #headerBar #headerBottom .navbar-header a.navbar-brand {
+    width: 180px;
+    padding-top: 8px;
+  }
+  #headerBar #headerBottom #navbar {
+    padding: 0;
+  }
+  #headerBar #headerBottom #navbar ul.navbar-nav {
+    padding-left: 170px;
+  }
+  #headerBar #headerBottom #navbar ul.navbar-nav a {
+    padding: 20px 12px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #headerBar #headerTop {
+    display: none;
+  }
+  #headerBar #headerBottom .navbar-header .navbar-toggle span {
+    background-color: #343434;
+  }
+  #headerBar #headerBottom .navbar-header a.navbar-brand {
+    width: 170px;
+  }
+  #headerBar #headerBottom #navbar {
+    max-height: none;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background: #e6e6e6;
+    padding-bottom: 20px;
+    border-color: #c1c0c0;
+  }
+  #headerBar #headerBottom #navbar.in::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px fade(#000000, 30%);
+    background-color: #333;
+  }
+  #headerBar #headerBottom #navbar.in::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f5f5f5;
+  }
+  #headerBar #headerBottom #navbar.in::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px fade(#000000, 30%);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #111;
+  }
+  #headerBar #headerBottom #navbar ul.navbar-nav {
+    display: inherit;
+    padding-left: 0;
+    text-align: left;
+  }
+}
+/*===========================================*/
+/* This is the file with home style
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+.btn-action {
+  font-size: 16px;
+  padding: 17px 35px;
+  border-radius: 26px;
+  display: inline-block;
+}
+
+.heading2 {
+  color: #FFF;
+  text-align: center;
+  font-weight: 600;
+  font-size: 47px;
+  line-height: 52px;
+}
+
+#banner {
+  height: calc(100vh - 115px);
+  background: url("../../src/images/bgmain.jpg") no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+}
+#banner h1 {
+  font-size: 50 px;
+  font-weight: 600;
+  color: #FFF;
+  text-align: left;
+  margin-bottom: 50px;
+}
+#banner ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+#banner ul li {
+  color: #FFF;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+#banner ul li span {
+  display: inline-block;
+  padding-left: 35px;
+}
+#banner ul li:before {
+  content: "\e95f";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-family: "fontello";
+  color: #0e4887;
+  border: 2px solid #0e4887;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  border-radius: 50%;
+  margin: 5px 10px 10px 0;
+  position: absolute;
+}
+#banner .item {
+  position: relative;
+}
+#banner .item .slide_cont {
+  position: absolute;
+  top: 12%;
+  left: 100px;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 8px rgb(150, 150, 150);
+}
+#banner .item .slide_cont span {
+  display: block;
+  line-height: 53px;
+}
+#banner .item .slide_cont .line-one {
+  font-weight: 300;
+  font-size: 55px;
+}
+#banner .item .slide_cont .line-two {
+  font-weight: 500;
+  font-size: 55px;
+}
+#banner .item .slide_cont .line-three {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  margin-top: 18px;
+}
+#banner .slick-slide img {
+  width: 100%;
+  object-fit: cover;
+}
+#banner .slick-prev,
+#banner .slick-next {
+  width: 40px;
+  height: 43px;
+  position: absolute;
+  z-index: 2;
+  padding: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: transparent;
+  background: transparent;
+  border: none;
+  -moz-transition: 0.3s all;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  -ms-transition: 0.3s all;
+  transition: 0.3s all;
+  outline: none;
+}
+#banner .slick-prev:before,
+#banner .slick-next:before {
+  font-family: "LineAwesome";
+  font-size: 50px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+#banner .slick-prev {
+  left: 15px;
+}
+#banner .slick-prev:before {
+  content: "\f111";
+}
+#banner .slick-next {
+  right: 15px;
+}
+#banner .slick-next:before {
+  content: "\f112";
+}
+#banner .slick-dots {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 14px 0;
+  list-style-type: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50px);
+}
+#banner .slick-dots li {
+  padding: 0 5px;
+}
+#banner .slick-dots button {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #717171;
+  border-radius: 100%;
+  background-color: #FFFFFF;
+  text-indent: -9999px;
+}
+#banner .slick-dots button:focus {
+  outline: none;
+}
+
+#plans {
+  margin-top: -50px;
+  padding-bottom: 60px;
+}
+#plans .plan-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#plans .plan-list .plan-item {
+  padding: 35px;
+  width: 390px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#plans .plan-list .plan-item:hover .bg-hover {
+  opacity: 1;
+}
+#plans .plan-list .plan-item .bg-hover {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#plans .plan-list .plan-item.basic {
+  background-image: url("../../src/images/tablet.jpg");
+  color: #262937;
+}
+#plans .plan-list .plan-item.basic .bg-hover {
+  background-color: #2cffc8;
+}
+#plans .plan-list .plan-item.soft {
+  background-image: url(../../src/images/girl.jpg);
+  color: #FFF;
+}
+#plans .plan-list .plan-item.soft .bg-hover {
+  background-color: #262937;
+}
+#plans .plan-list .plan-item.family {
+  background-image: url("../../src/images/family.jpg");
+  color: #FFF;
+}
+#plans .plan-list .plan-item.family .bg-hover {
+  background-color: #0e4887;
+}
+#plans .plan-list .plan-item.premium {
+  background-image: url("../../src/images/watchingtv.jpg");
+  color: #262937;
+}
+#plans .plan-list .plan-item.premium .bg-hover {
+  background-color: #C0C0C0;
+}
+#plans .plan-list .plan-item.gold {
+  background-image: url("../../src/images/gold.jpg");
+  color: #FFF;
+}
+#plans .plan-list .plan-item.gold .bg-hover {
+  background-color: #D4AF37;
+}
+#plans .plan-list .plan-item .plan-item-inner {
+  position: relative;
+  z-index: 2;
+}
+#plans .plan-list .plan-item .plan-item-inner .plan-name {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+#plans .plan-list .plan-item .plan-item-inner .plan-value {
+  font-size: 20px;
+}
+#plans .plan-list .plan-item .plan-item-inner .plan-value span {
+  font-size: 28px;
+  font-weight: 600;
+}
+#plans .box-btn {
+  text-align: center;
+  margin: 70px 0;
+}
+#plans .box-btn .btn-action {
+  background-color: #0e4887;
+  color: #FFF;
+}
+
+#contactWhats {
+  background-color: #0e4887;
+  color: #FFF;
+  text-align: center;
+}
+#contactWhats .btn-action {
+  margin-top: 30px;
+  text-transform: uppercase;
+  background: #FFF;
+  color: #0e4887;
+  white-space: nowrap;
+}
+#contactWhats .btn-action i {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+#services, #contactWhats, #contact {
+  padding: 60px 0;
+}
+
+#services {
+  background-color: #262937;
+  background: url("../../src/images/bgservices.jpg") no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+#services .services-list {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+#services .services-list .service-item {
+  text-align: center;
+  padding: 35px 58px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0;
+}
+#services .services-list .service-item i, #services .services-list .service-item strong, #services .services-list .service-item span {
+  display: block;
+  color: #FFF;
+}
+#services .services-list .service-item i {
+  font-size: 65px;
+}
+#services .services-list .service-item strong {
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+
+#contact {
+  background-color: #0e4887;
+}
+#contact .contact-form {
+  margin-top: 25px;
+}
+#contact .contact-form p.tip {
+  color: #FFF;
+  letter-spacing: 0.9px;
+  max-width: 650px;
+  margin: 0 auto 50px;
+  text-align: justify;
+}
+#contact .contact-form #contact-form .form-group {
+  margin-bottom: 22px;
+}
+#contact .contact-form #contact-form label {
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+#contact .contact-form #contact-form textarea.form-control,
+#contact .contact-form #contact-form input.form-control {
+  border: 1px solid #717171 !important;
+  background-color: #FFF;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 10px;
+}
+#contact .contact-form #contact-form textarea.form-control:focus,
+#contact .contact-form #contact-form input.form-control:focus {
+  border: 1px solid #343434 !important;
+}
+#contact .contact-form #contact-form input.form-control {
+  height: 40px;
+}
+#contact .contact-form #contact-form textarea.form-control {
+  height: 120px;
+  /*margin-bottom: 20px;*/
+}
+#contact .contact-form #contact-form .form-btn {
+  color: #FFFFFF;
+  background-color: #0e4887;
+  width: 160px;
+  border: 1px solid #0e4887;
+  padding: 12px 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#contact .contact-form #contact-form .form-btn:hover, #contact .contact-form #contact-form .form-btn:focus {
+  color: #0e4887;
+  background-color: transparent;
+  border: 1px solid #0e4887;
+  outline: none;
+}
+#contact .contact-form #contact-form ::-webkit-input-placeholder {
+  color: #717171 !important;
+  text-transform: initial;
+  font-size: 13px;
+}
+#contact .contact-form #contact-form :-moz-placeholder {
+  color: #717171 !important;
+  text-transform: initial;
+  font-size: 13px;
+}
+#contact .contact-form #contact-form ::-moz-placeholder {
+  color: #717171 !important;
+  text-transform: initial;
+  font-size: 13px;
+}
+#contact .contact-form #contact-form :-ms-input-placeholder {
+  color: #717171 !important;
+  text-transform: initial;
+  font-size: 13px;
+}
+#contact .contact-form .btn-action {
+  color: #0e4887;
+  border: none;
+  text-transform: uppercase;
+}
+#contact .line {
+  width: 55px;
+  height: 2px;
+  background-color: #0e4887;
+  margin: 45px auto;
+}
+#contact .contact-lateral {
+  padding-left: 30px;
+}
+#contact .contact-lateral h3.header-contact {
+  font-size: 22px;
+  font-weight: 300;
+  display: inline-block;
+  width: 310px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #343434;
+  color: #343434;
+}
+#contact .contact-lateral .box-contact-info {
+  width: 325px;
+  text-align: left;
+}
+#contact .contact-lateral .box-contact-info .contact-info {
+  margin-top: 18px;
+}
+#contact .contact-lateral .box-contact-info .contact-info .contact-left {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  margin-right: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 1px solid #343434;
+}
+#contact .contact-lateral .box-contact-info .contact-info .contact-left i {
+  vertical-align: middle;
+  font-size: 22px;
+  color: #343434;
+}
+#contact .contact-lateral .box-contact-info .contact-info .contact-left i.cel {
+  font-size: 27px;
+}
+#contact .contact-lateral .box-contact-info .contact-info .contact-right {
+  display: inline;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: 300;
+  color: #343434;
+}
+#contact .contact-lateral .box-contact-info .contact-info p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+.modal-box {
+  max-width: 550px;
+  background: #FFFFFF;
+  position: relative !important;
+  margin: 0 auto;
+  left: 0 !important;
+}
+.modal-box img {
+  width: 100%;
+  height: 100%;
+}
+.modal-box .modal-box-content {
+  padding: 25px;
+}
+.modal-box .modal-box-content h4 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.modal-box .modal-box-content p {
+  font-size: 15px;
+  text-align: left;
+  line-height: 22px;
+  padding: 25px 0;
+  padding-top: 10px;
+  max-width: 800px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #717171;
+}
+
+/*===========================================*/
+/* This is the file with footer style
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+footer {
+  padding: 25px 0;
+  background-color: #1d202b;
+  font-size: 12.25px;
+  font-weight: 400;
+}
+footer p {
+  color: #686d80;
+  margin: 0;
+  float: left;
+}
+footer p span {
+  color: #FFF;
+}
+footer .anatel {
+  float: right;
+}
+
+@media (max-width: 767px) {
+  footer .copyright {
+    float: none;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  footer .anatel {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1199px) {
+  .main #about {
+    background-image: none;
+  }
+  .main #services .container-services .service-list {
+    width: 300px;
+    padding: 30px;
+  }
+}
+@media (max-width: 991px) {
+  .main #banner {
+    height: auto;
+  }
+  .main #plans {
+    margin-top: 30px;
+  }
+  .main #contact .contact-lateral {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .main #contact .contact-lateral .box-contact-info {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 767px) {
+  .main .heading2 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .main #banner h1 {
+    font-size: 35px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

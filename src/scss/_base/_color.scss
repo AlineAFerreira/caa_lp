@@ -1,0 +1,20 @@
+
+// This is the file with the colors variables
+// Theme Author: Aline Ferreira
+// Version: 1.0
+
+
+//$main_color:   #e4b95b !default; /mostarda
+//$main_color:   #555d65 !default; //cinza
+$main_color:           #0e4887 !default; //vermelha
+$main_color_lighter:   #ee8a98 !default; 
+$snd_color:            #e6e6e6 !default;
+$text_color:           #898989 !default;
+$pure_black:           #000000 !default;
+$pure_white:           #FFFFFF !default;
+$pure_ice:              darken($pure_white, 5%) !default;
+$space_gray:           #343434 !default;
+$medium_gray:          lighten($space_gray, 24%);
+$lighter_gray:         #E4E4E4;
+$alert-red:            #EA4335;
+
