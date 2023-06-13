@@ -412,7 +412,7 @@
               <button
                 data-testid="planCard-Básico-button"
                 class="btn-primary"
-                onclick="caa.runTo('#subscribe', -60, 500)"
+                onclick="caa.handleSelectedPlan({id: 0, name: 'Básico'})"
               >
                 Eu quero
               </button>
@@ -664,7 +664,7 @@
               <button
                 data-testid="planCard-Premium-button"
                 class="btn-primary"
-                onclick="caa.runTo('#subscribe', -60, 500)"
+                onclick="caa.handleSelectedPlan({id: 1, name: 'Essencial'})"
               >
                 Eu quero
               </button>
@@ -794,7 +794,7 @@
               <button
                 data-testid="planCard-Exclusivo-button"
                 class="btn-primary"
-                onclick="caa.runTo('#subscribe', -60, 500)"
+                onclick="caa.handleSelectedPlan({id: 3, name: 'Exclusivo'})"
               >
                 Eu quero
               </button>

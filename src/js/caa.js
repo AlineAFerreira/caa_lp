@@ -4,6 +4,7 @@
 =============================*/
 
 const caa = {
+  SELECTED_PLAN: null,
   init: function () {
     const maskPhone = function (val) {
         return val.replace(/\D/g, '').length === 11
@@ -242,6 +243,10 @@ const caa = {
       $('#profile_type').val($('#selected div p').text());
       caa.checkValidation();
     });
+
+    $().on('click', () => {
+      SELECTED_PLAN = this.value;
+    });
   },
 
   checkValidation: function () {
@@ -269,5 +274,10 @@ const caa = {
 
   handleChange: elem => {
     elem.value ? elem.classList.add('has-value') : elem.classList.remove('has-value');
+  },
+  handleSelectedPlan: ({ id, name }) => {
+    console.log(name);
+    caa.runTo('#subscribe', -60, 500);
+    SELECTED_PLAN = name;
   }
 };
