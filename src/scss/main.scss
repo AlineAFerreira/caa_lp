@@ -1,0 +1,263 @@
+// This is the Main Stylesheet
+// Theme Author: Aline Ferreira
+// Version: 1.0
+
+//CSS Style Structure
+
+// General
+// Helper Classes
+// Page title
+
+@import './_base/container';
+
+//Color Schema
+@import './_base/color';
+
+//Fonts
+@import './_base/fonts';
+
+//Header
+@import './_components/header';
+
+/*********************************
+* General 
+**********************************/
+@mixin diamondShape() {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*********************************
+* BOTÃO PADRÃO - SIMPLES  
+**********************************/
+
+@mixin btn-mixin($border, $bg, $color, $bgHover, $colorHover) {
+  color: $color;
+  border: $border;
+  background-color: $bg;
+
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 0.875rem 1.125rem;
+  gap: 6px;
+  height: 3.25rem;
+  border-radius: 70px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 148%;
+  outline: 0px;
+  transition: background 0.2s ease-in 0s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $bgHover;
+    color: $colorHover;
+  }
+
+  &:active {
+    background-color: #000;
+    border: none;
+  }
+
+  &:disabled {
+    color: #cfd0d1;
+    background-color: #f2f2f2;
+    border: none;
+    cursor: not-allowed;
+  }
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  color: $text_color;
+  font-size: 14px;
+  font-family: $main_font;
+  line-height: normal;
+  font-weight: 400;
+}
+
+/*********************************
+* HELPER CLASSES 
+**********************************/
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-alert {
+  color: $alert-red;
+}
+
+.top_space10 {
+  margin-top: 10px;
+}
+
+.top_space15 {
+  margin-top: 15px;
+}
+
+.top_space20 {
+  margin-top: 22px;
+}
+
+.top_space30 {
+  margin-top: 30px;
+}
+
+.btn-primary {
+  @include btn-mixin(
+    1px solid $main_color,
+    $main_color,
+    $pure_white,
+    $main_color_lighter,
+    $pure_white
+  );
+}
+
+/*********************************
+* PAGE TITLE HEADERS
+**********************************/
+h1.heading,
+h2.heading {
+  color: $main_color;
+  font-family: $snd_font;
+}
+
+h1.heading {
+  position: relative;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+
+  &:after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: $main_color;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @media (max-width: 767px) {
+    font-size: 25px;
+  }
+}
+
+h2.heading {
+  font-size: 25px;
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
+}
+
+label[id$='-error'] {
+  color: #ea4335 !important;
+  font-size: 13px;
+  position: absolute;
+  margin-top: 0 !important;
+  font-weight: 500;
+  text-transform: initial !important;
+}
+
+/*********************************
+* MODAL CONTACT  
+**********************************/
+
+#contactModal {
+  .modal-header {
+    background: $main_color;
+    color: $pure_white;
+
+    .modal-title {
+      text-transform: uppercase;
+      font-weight: 300;
+      letter-spacing: 1.6px;
+    }
+
+    .close {
+      margin-top: -2px;
+      color: #fff;
+      opacity: 1;
+      text-shadow: none;
+      font-size: 25px;
+      outline: none;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .modal-body {
+    .form-group {
+      margin-bottom: 20px;
+
+      label {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .alert {
+    display: none;
+    i {
+      font-size: 25px;
+      margin-right: 10px;
+      vertical-align: bottom;
+    }
+  }
+
+  .modal-footer {
+    button {
+      outline: none;
+
+      &[type='button'] {
+        //@include btn-std(1px solid $text_color, $text_color, $pure_white);
+      }
+
+      &[type='submit'] {
+        background: $space_gray;
+        //param: $border, $color1, $color2
+        //@include btn-std(1px solid $space_gray, $pure_white, $space_gray);
+      }
+    }
+  }
+}
+
+//Banner
+@import './_components/banner';
+
+//About
+@import './_components/about';
+
+//Subscribe
+@import './_components/subscribe';
+
+//Footer
+@import './_components/footer';
+
+.home {
+  font-size: 16px;
+}

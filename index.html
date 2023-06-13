@@ -1,340 +1,385 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-    <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Faça parte | Compre & Alugue Agora</title>
     <meta
-        name="description"
-        content="A primeira e única rede social do mercado imobiliário, pensada de corretor para corretor."
+      name="description"
+      content="A primeira e única rede social do mercado imobiliário, pensada de corretor para corretor."
     />
     <meta property="og:title" content="Faça parte | Compre &amp; Alugue Agora" />
     <meta
-        property="og:description"
-        content="A primeira e única rede social do mercado imobiliário, pensada de corretor para corretor."
+      property="og:description"
+      content="A primeira e única rede social do mercado imobiliário, pensada de corretor para corretor."
     />
     <meta property="og:url" content="https://www.comprealugueagora.com.br/landing-page" />
     <meta
-        property="og:image"
-        content="https://www.comprealugueagora.com.br/assets/images/metataglogocaa.png"
+      property="og:image"
+      content="https://www.comprealugueagora.com.br/assets/images/metataglogocaa.png"
     />
-    <meta name="keywords" content="">
-    <meta name="author" content="Aline Alves Ferreira">
+    <meta name="keywords" content="" />
+    <meta name="author" content="Aline Alves Ferreira" />
 
     <!-- Favicons ================================================== -->
     <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="https://www.comprealugueagora.com.br/favicon/apple-touch-icon.png"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://www.comprealugueagora.com.br/favicon/apple-touch-icon.png"
     />
     <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="https://www.comprealugueagora.com.br/favicon/favicon-32x32.png"
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://www.comprealugueagora.com.br/favicon/favicon-32x32.png"
     />
     <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="https://www.comprealugueagora.com.br/favicon/favicon-16x16.png"
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://www.comprealugueagora.com.br/favicon/favicon-16x16.png"
     />
     <link
-        rel="manifest"
-        href="https://www.comprealugueagora.com.br/favicon/site.webmanifest"
+      rel="manifest"
+      href="https://www.comprealugueagora.com.br/favicon/site.webmanifest"
     />
     <link
-        rel="mask-icon"
-        href="https://www.comprealugueagora.com.br/favicon/safari-pinned-tab.svg"
-        color="#5bbad5"
+      rel="mask-icon"
+      href="https://www.comprealugueagora.com.br/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
     />
     <meta name="msapplication-TileColor" content="#413660" />
     <meta name="theme-color" content="#ffffff" />
 
-    <!-- Bootstrap ================================================== -->
-    <link rel="stylesheet" type="text/css" href="src/libs-css/bootstrap.min.css">
-
-    <!-- Stylesheet ================================================== -->
-    <link rel="stylesheet" type="text/css" href="src/css/styles.css">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
 
-<body>
+    <!-- Stylesheet ================================================== -->
+    <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
+  </head>
+
+  <body>
     <div class="main">
-        <header id="headerBar" class="cbp-af-header">
-            <div class="header-top container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html">
-                        <div class="box-img">
-                            <img class="img-logo img-responsive" src="src/images/logos/evolucao_telecom.png"
-                                alt="Evolução Telecom" title="Evolução Telecom" width="120px" ;>
-                        </div>
-                    </a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a onclick="caa.runTo('body', 0, 500)">Home</a></li>
-                        <li><a onclick="caa.runTo('#plans', 140, 500)">Planos</a></li>
-                        <li><a onclick="caa.runTo('#services', 80, 500)">Serviços</a></li>
-                        <!-- <li><a href="#">2ª via de Fatura</a></li> -->
-                        <li><a onclick="caa.runTo('#contact', 80, 500)">Contatos</a></li>
-                    </ul>
-                </div>
-                <!--/.nav-collapse -->
-            </div>
-        </header>
+      <div class="main-background"></div>
+      <div class="main-section">
+        <div
+          id="mainSectionCenter"
+          class="styles__Center-sc-1g3utri-1 eMWYTV container"
+        ></div>
+      </div>
 
-        <div id="banner">
-            <div class="container">
-                <h1>Evolução Telecom<br /> conectando você ao mundo.</h1>
-                <ul>
-                    <li><span>Banda larga em casa</span></li>
-                    <li><span>Wi-fi Grátis</span></li>
-                    <li><span>Alta velocidade</span></li>
-                </ul>
+      <div id="banner">
+        <div class="container">
+          <div class="subscribe-container">
+            <div class="content">
+              <img src="src/images/logo.svg" alt="Logo" />
+              <h1>Faça parte da 1ª Turma CAA!</h1>
+              <p>
+                A primeira e única rede social do mercado imobiliário, pensada de corretor
+                para corretor.
+              </p>
+              <button data-testid="button-subscribe-banner" class="btn-primary">
+                Inscreva-se agora
+              </button>
             </div>
+          </div>
+          <div class="video-container">
+            <img src="src/images/temp-capa.png" alt="Capa video" />
+          </div>
         </div>
+      </div>
 
-        <!-- #services Plan -->
-        <section id="plans">
-            <div class="container">
-                <div class="plan-list">
-                    <div class="plan-item basic">
-                        <div class="bg-hover"></div>
-                        <div class="plan-item-inner">
-                            <div class="plan-name">
-                                Basic - 10MB
-                            </div>
-                            <div>
-                                apenas
-                            </div>
-                            <div class="plan-value">
-                                R$ <span>60,00</span> /mês
-                            </div>
-                        </div>
+      <!-- #about section -->
+      <section id="about">
+        <div class="styles__Center-sc-1da6sg8-1 hKnEct container">
+          <div class="col-xs-12 offset-md-7">
+            <h2>Por que somos <strong>diferentes</strong>?</h2>
+            <div class="styles__Description-sc-1da6sg8-3 eGAGkL">
+              <p>
+                Não somos apenas mais uma plataforma de anúncios, nem uma imobiliária.
+              </p>
+              <p>
+                Somos a primeira e única rede social de uso diário de corretores,
+                corretoras e imobiliárias.
+              </p>
+              <p>Não participamos de comissão e nem ficamos com o cliente.</p>
+              <p>
+                Unimos quem está buscando comprar, vender ou alugar imóveis com os
+                melhores especialistas do mercado imobiliário.
+              </p>
+              <strong
+                >No CAA, o corretor e a imobiliária são os protagonistas do
+                negócio.</strong
+              >
+            </div>
+            <button data-testid="button-subscribe-about" class="btn-primary">
+              Inscreva-se agora
+            </button>
+          </div>
+        </div>
+        <img
+          src="./src/images/familia-recebendo-as-chaves-min.png"
+          alt="Imagem família"
+          class="img-bg"
+        />
+      </section>
+      <!-- / #about section -->
+
+      <!-- #services Plan -->
+      <section id="plans">
+        <div class="container">
+          <div class="plan-list">
+            <div class="plan-item basic">
+              <div class="bg-hover"></div>
+              <div class="plan-item-inner">
+                <div class="plan-name">Basic - 10MB</div>
+                <div>apenas</div>
+                <div class="plan-value">R$ <span>60,00</span> /mês</div>
+              </div>
+            </div>
+            <div class="plan-item soft">
+              <div class="bg-hover"></div>
+              <div class="plan-item-inner">
+                <div class="plan-name">Soft - 30MB</div>
+                <div>apenas</div>
+                <div class="plan-value">R$ <span>79,90</span> /mês</div>
+              </div>
+            </div>
+            <div class="plan-item family">
+              <div class="bg-hover"></div>
+              <div class="plan-item-inner">
+                <div class="plan-name">Family - 50MB</div>
+                <div>apenas</div>
+                <div class="plan-value">R$ <span>90,00</span> /mês</div>
+              </div>
+            </div>
+            <div class="plan-item premium">
+              <div class="bg-hover"></div>
+              <div class="plan-item-inner">
+                <div class="plan-name">Premium - 70MB</div>
+                <div>apenas</div>
+                <div class="plan-value">R$ <span>100,00</span> /mês</div>
+              </div>
+            </div>
+            <div class="plan-item gold">
+              <div class="bg-hover"></div>
+              <div class="plan-item-inner">
+                <div class="plan-name">Gold - 100MB</div>
+                <div>apenas</div>
+                <div class="plan-value">R$ <span>160,00</span> /mês</div>
+              </div>
+            </div>
+          </div>
+          <div class="box-btn hidden">
+            <a href="#" class="btn-action">Ver todos os planos</a>
+          </div>
+        </div>
+      </section>
+      <!-- / #services plans -->
+
+      <!-- contactWhats Section -->
+      <section id="contactWhats">
+        <div class="mask"></div>
+        <div class="container">
+          <h2 class="heading2">Assine já</h2>
+
+          <h4>Tire suas dúvidas através do Whatsapp e assine agora mesmo!</h4>
+          <a
+            href="https://api.whatsapp.com/send?phone=5511941600321"
+            class="btn-action"
+            target="_blank"
+          >
+            <i class="fa fa-whatsapp"></i>
+            Iniciar conversa
+          </a>
+        </div>
+      </section>
+      <!-- / #contactWhats Section -->
+
+      <!-- #services Section -->
+      <section id="services">
+        <div class="container">
+          <h2 class="heading2">Explore um universo <br />de possibilidades</h2>
+          <div class="services-list">
+            <div class="service-item">
+              <i class="icon-ethernet"></i>
+              <strong>Banda Larga</strong>
+              <span
+                >Oferecemos uma fantástica gama de serviços de banda larga para a sua
+                casa.</span
+              >
+            </div>
+            <div class="service-item">
+              <i class="icon-wifi"></i>
+              <strong>Wi-fi</strong>
+              <span
+                >Acesse a internet sem a necessidade de cabos com nossos roteadores.</span
+              >
+            </div>
+            <div class="service-item">
+              <i class="icon-wifi-signal"></i>
+              <strong>Conecte pelo celular</strong>
+              <span>Fique sempre conectado com todos os seus dispositivos. </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- / #services Section -->
+
+      <!-- Subscribe Section -->
+      <section id="subscribe">
+        <div class="container">
+          <h2>Inscreva-se para fazer parte da primeira turma de corretores do CAA</h2>
+          <p class="description">
+            Você terá um acesso exclusivo em primeira mão da nossa plataforma. E o melhor:
+            é de graça!
+          </p>
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <form id="contact-form">
+              <div class="wrapper-input">
+                <input type="text" name="name" onchange="caa.handleChange(this)" />
+                <label>Nome</label>
+                <span class="error-message"></span>
+              </div>
+
+              <div class="wrapper-input">
+                <input type="text" name="lastname" onchange="caa.handleChange(this)" />
+                <label>Sobrenome</label>
+                <span class="error-message">Campo obrigatório</span>
+              </div>
+
+              <div class="wrapper-input">
+                <input type="text" name="email" onchange="caa.handleChange(this)" />
+                <label>E-mail</label>
+                <span class="error-message"></span>
+              </div>
+
+              <div class="wrapper-input">
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  onchange="caa.handleChange(this)"
+                />
+                <label>Telefone</label>
+                <span class="error-message"></span>
+              </div>
+
+              <div class="wrapper-input">
+                <input
+                  type="text"
+                  id="cpf"
+                  name="cpf"
+                  onchange="caa.handleChange(this)"
+                />
+                <label>CPF</label>
+                <span class="error-message"></span>
+              </div>
+
+              <div class="wrapper-input">
+                <input
+                  type="text"
+                  id="birthdate"
+                  name="birthdate"
+                  onchange="caa.handleChange(this)"
+                />
+                <label>Data de Nascimento</label>
+                <span class="error-message"></span>
+              </div>
+
+              <div class="wrapper-input">
+                <input type="text" name="creci" onchange="caa.handleChange(this)" />
+                <label>Creci</label>
+                <span class="error-message"></span>
+              </div>
+
+              <div class="wrapper-select">
+                <label>Perfil</label>
+                <div class="select_wrap">
+                  <ul class="default_option">
+                    <div class="icon">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 100 100"
+                        fill="var(--color-neutral-900)"
+                        xmlns="http://www.w3.org/2000/svg"
+                        name="ChevronDownLight"
+                        dimension="15"
+                        class="avatar"
+                      >
+                        <path
+                          d="M94.2914 27.7086L92.8591 26.2763C91.911 25.3282 90.3778 25.3282 89.4297 26.2763L50.0113 65.7148L10.5728 26.2763C9.62469 25.3282 8.09154 25.3282 7.1434 26.2763L5.7111 27.7086C4.76297 28.6567 4.76297 30.1899 5.7111 31.138L48.2764 73.7235C49.2246 74.6717 50.7577 74.6717 51.7059 73.7235L94.2712 31.138C95.2395 30.1899 95.2395 28.6567 94.2914 27.7086Z"
+                        ></path>
+                      </svg>
                     </div>
-                    <div class="plan-item soft">
-                        <div class="bg-hover"></div>
-                        <div class="plan-item-inner">
-                            <div class="plan-name">
-                                Soft - 30MB
-                            </div>
-                            <div>
-                                apenas
-                            </div>
-                            <div class="plan-value">
-                                R$ <span>79,90</span> /mês
-                            </div>
-                        </div>
-                    </div>
-                    <div class="plan-item family">
-                        <div class="bg-hover"></div>
-                        <div class="plan-item-inner">
-                            <div class="plan-name">
-                                Family - 50MB
-                            </div>
-                            <div>
-                                apenas
-                            </div>
-                            <div class="plan-value">
-                                R$ <span>90,00</span> /mês
-                            </div>
-                        </div>
-                    </div>
-                    <div class="plan-item premium">
-                        <div class="bg-hover"></div>
-                        <div class="plan-item-inner">
-                            <div class="plan-name">
-                                Premium - 70MB
-                            </div>
-                            <div>
-                                apenas
-                            </div>
-                            <div class="plan-value">
-                                R$ <span>100,00</span> /mês
-                            </div>
-                        </div>
-                    </div>
-                    <div class="plan-item gold">
-                            <div class="bg-hover"></div>
-                            <div class="plan-item-inner">
-                                <div class="plan-name">
-                                    Gold - 100MB
-                                </div>
-                                <div>
-                                    apenas
-                                </div>
-                                <div class="plan-value">
-                                    R$ <span>160,00</span> /mês
-                                </div>
-                            </div>
-                        </div>                    
+                    <li id="selected">
+                      <div class="option"></div>
+                    </li>
+                  </ul>
+                  <ul class="select_ul">
+                    <li class="">
+                      <div class="option">
+                        <p>Corretor</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="option">
+                        <p>Imobiliária</p>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
-                <div class="box-btn hidden">
-                    <a href="#" class="btn-action">Ver todos os planos</a>
-                </div>
-            </div>
-        </section>
-        <!-- / #services plans -->
+                <input id="profile_type" type="text" name="profile" />
+                <span class="error-message"></span>
+              </div>
 
-        
-        <!-- contactWhats Section -->
-        <section id="contactWhats">
-            <div class="mask"></div>
-            <div class="container">
-                <h2 class="heading2">
-                    Assine já 
-                </h2>
- 
-                <h4>Tire suas dúvidas através do Whatsapp e assine agora mesmo!</h4>                  
-                <a href="https://api.whatsapp.com/send?phone=5511941600321" class="btn-action" target="_blank">
-                    <i class="fa fa-whatsapp"></i>
-                    Iniciar conversa
-                </a>   
-            </div>
-        </section> 
-        <!-- / #contactWhats Section -->
+              <div class="container-btn">
+                <small>
+                  Ao enviar você aceita receber contato, via telefone e e-mail.
+                </small>
+                <button id="btn-send" class="btn-primary" type="submit" disabled>
+                  Enviar dados
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- / #Subscribe Section -->
 
-        <!-- #services Section -->
-        <section id="services">
-            <div class="container">
-                <h2 class="heading2">
-                    Explore um universo <br />de possibilidades
-                </h2>
-                <div class="services-list">
-                    <div class="service-item">
-                        <i class="icon-ethernet"></i>
-                        <strong>Banda Larga</strong>
-                        <span>Oferecemos uma fantástica gama de serviços de banda larga para a sua casa.</span>
-                    </div>
-                    <div class="service-item">
-                        <i class="icon-wifi"></i>
-                        <strong>Wi-fi</strong>
-                        <span>Acesse a internet sem a necessidade de cabos com nossos roteadores.</span>
-                    </div>
-                    <div class="service-item">
-                        <i class="icon-wifi-signal"></i>
-                        <strong>Conecte pelo celular</strong>
-                        <span>Fique sempre conectado com todos os seus dispositivos. </span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- / #services Section -->
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container">
-                <h2 class="heading2">
-                    Adquira o seu plano agora mesmo
-                </h2>
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <p class="tip">
-                                Nós garantimos o serviço de suporte ao cliente de qualidade com alta velocidade.
-                            </p>
-                        </div>
-
-                        <div class="col-md-offset-4 col-md-4">
-                            <form id="contact-form" method="POST" action="submit.1.php">
-                                <div class="form-group">
-                                    <label class="hidden">Nome:</label>
-                                    <input type="text" class="form-control" placeholder="Nome" name="name">
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="hidden">E-mail:</label>
-                                    <input type="text" class="form-control" placeholder="E-mail" name="email">
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="hidden">Telefone:</label>
-                                    <input type="text" class="form-control phone" placeholder="Telefone" name="phone">
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="hidden">Escolha seu plano:</label>
-                                    <select class="form-control plan" name="plan">
-                                        <option value="">Escolha seu plano:</option>
-                                        <option value="1">Basic - 10Mb - R$ 60,00</option>
-                                        <option value="2">Soft - 30Mb - R$ 79,90</option>
-                                        <option value="3">Family - 50Mb - R$ 90,00</option>
-                                        <option value="4">Premium - 70Mb - R$ 100,00</option>
-                                        <option value="5">Gold - 100Mb - R$ 160,00</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="hidden">Endereço:</label>
-                                    <textarea class="form-control" rows="1" placeholder="Informe o seu  endereço"
-                                        name="address"></textarea>
-                                </div>
-
-                                <div id="alertMsg" class="col-xs-12 alert hidden" role="alert">
-                                    <span class="text">Formulário enviado com sucesso!</span>
-                                </div>
-
-                                <div class="form-group text-center">
-                                    <button id="sendForm" class="btn-action" type="submit">
-                                        Enviar
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- / #Contact Section -->
-
-        <!-- Footer Section -->
-        <footer>
-            <div class="container">
-                <p class="copyright"><span>Evolução Telecom</span> © 2019 Todos os direitos reservados.</p>
-                <img src="src/images/anatel.png" class="anatel"/>
-            </div>
-        </footer>
-        <!-- / Footer Section -->
+      <!-- Footer Section -->
+      <footer id="footer">
+        <div class="container">
+          <p>
+            ALUGUEAGORA.COM &amp; COMPREAGORA.COM PUBLICIDADE LTDA - CNPJ:
+            29.136.935/0001-81 - Av. Indianópolis, 2005 - Indianópolis - São Paulo - SP,
+            04063-004
+          </p>
+        </div>
+      </footer>
+      <!-- / Footer Section -->
     </div>
-
-    <a id="backToTop" class="" type="button" title="Volta para o topo" onclick="caa.backtotop();">
-        <div class="border"></div>
-        <i class="icon-arrow-up-1"></i>
-    </a>
 
     <!-- Javascripts -->
     <script type="text/javascript" src="src/libs-js/jquery.min.js"></script>
     <script type="text/javascript" src="src/libs-js/jquery-migrate-3.0.0.min.js"></script>
-    <script type="text/javascript" src="src/libs-js/bootstrap.min.js"></script>
     <!-- Contact JS -->
     <script type="text/javascript" src="src/libs-js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="src/libs-js/jquery.mask.min.js"></script>
     <!--JS for MAGNIFIC POPUP & ALL SCRIPTS & CALLS-->
-    <script type="text/javascript" src="src/libs-js/classie.js"></script>
-    <script type="text/javascript" src="src/libs-js/cbpAnimatedHeader.min.js"></script>
     <script type="text/javascript" src="src/js/caa.js"></script>
     <script type="text/javascript">
-        $(function() {
-            caa.init();
-        })
+      $(function () {
+        caa.init();
+      });
     </script>
-</body>
-
+  </body>
 </html>

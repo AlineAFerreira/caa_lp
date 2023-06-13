@@ -1,0 +1,266 @@
+/*===========================================*/
+/* This is the file with subscribe section style
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+
+#subscribe {
+  background-color: $pure_white;
+  padding: 160px 0;
+
+  @media (max-width: 767px) {
+    padding: 80px 0;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 135%;
+    color: #3d444d;
+  }
+
+  p.description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 135%;
+    color: #3d444d;
+    margin-bottom: 32px;
+  }
+
+  #contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px 12px;
+  }
+
+  .wrapper-input {
+    position: relative;
+    border: 2px solid #c9d2d8;
+    border-radius: 8px;
+    flex: 1;
+    min-width: calc(100% / 4 - 12px);
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      min-width: calc(100% / 2 - 12px);
+    }
+
+    @media (max-width: 767px) {
+      min-width: 100%;
+    }
+
+    input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 28px 16px 10px;
+
+      &:focus {
+        & + label {
+          font-size: 12px;
+          line-height: 16px;
+          transform: translateY(-100%);
+        }
+      }
+
+      &.has-value {
+        & + label {
+          font-size: 12px;
+          line-height: 16px;
+          transform: translateY(-100%);
+        }
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      font-size: 16px;
+      line-height: 135%;
+      color: #5b707f;
+      pointer-events: none;
+      transition: transform 0.2s ease;
+      transform: translateY(-50%);
+    }
+
+    .error-message {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      opacity: 0;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 135%;
+      color: transparent;
+      transition: bottom 0.2s ease, opacity 0.5s ease, color 0.1s ease;
+    }
+
+    &.has-error {
+      background: #fee2e2;
+      border: 2px solid #fca5a5;
+
+      .error-message {
+        color: $alert-red;
+        bottom: -25px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .wrapper-select {
+    position: relative;
+    border: 2px solid #c9d2d8;
+    border-radius: 8px;
+    flex: 1;
+    min-width: calc(100% / 4 - 12px);
+    min-height: 57px;
+
+    &.has-value {
+      label {
+        font-size: 12px;
+        line-height: 16px;
+        transform: translateY(-100%);
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      font-size: 16px;
+      line-height: 135%;
+      color: #5b707f;
+      pointer-events: none;
+      transition: transform 0.2s ease;
+      transform: translateY(-50%);
+    }
+    .select_wrap {
+      position: relative;
+      height: 100%;
+
+      .default_option {
+        background: var(--white);
+        border-radius: 3px;
+        position: relative;
+        cursor: pointer;
+        list-style: none;
+        height: 100%;
+        margin-bottom: 0;
+        padding: 0;
+
+        .icon {
+          width: 15px;
+          height: 15px;
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+          font-size: 20px;
+          display: grid;
+          place-items: center;
+
+          svg {
+            transition: transform 0.2s ease;
+          }
+        }
+
+        li {
+          padding: 28px 16px 10px;
+          font-weight: 700;
+
+          .option p {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .select_ul {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding-left: 0;
+        background: #fff;
+        border-radius: 8px;
+        border: 2px solid #c9d2d8;
+        display: none;
+        list-style: none;
+        z-index: 1;
+
+        li {
+          display: flex;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 3px;
+          margin-bottom: 1px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &:hover,
+          &.active {
+            background: #f4f2f8;
+          }
+
+          p {
+            margin: 0;
+          }
+        }
+      }
+
+      .option {
+        display: flex;
+        align-items: center;
+      }
+
+      &.active {
+        .select_ul {
+          display: block;
+        }
+        .default_option .icon svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    #profile_type {
+      border: none;
+      position: absolute;
+      opacity: 0;
+    }
+
+    .error-message {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      opacity: 0;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 135%;
+      color: transparent;
+      transition: bottom 0.2s ease, opacity 0.5s ease, color 0.1s ease;
+    }
+
+    &.has-error {
+      background: #fee2e2;
+      border: 2px solid #fca5a5;
+
+      .error-message {
+        color: $alert-red;
+        bottom: -25px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .container-btn {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+}
