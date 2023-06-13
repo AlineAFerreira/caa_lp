@@ -7,8 +7,8 @@
 .container-xl,
 .container-xxl {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
+  padding-right: 12px;
+  padding-left: 12px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -389,15 +389,15 @@ body {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  padding: 0.875rem 1.125rem;
+  padding: 14px 18px;
   gap: 6px;
-  height: 3.25rem;
+  height: 52px;
   border-radius: 70px;
   font-family: Inter;
   font-style: normal;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 148%;
+  font-size: 16px;
+  line-height: 23.68px;
   outline: 0px;
   transition: background 0.2s ease-in 0s;
   cursor: pointer;
@@ -526,6 +526,7 @@ label[id$=-error] {
 }
 
 #banner {
+  display: flex;
   min-height: 75vh;
 }
 @media (max-width: 767px) {
@@ -536,12 +537,18 @@ label[id$=-error] {
 #banner .container {
   display: flex;
 }
+@media (max-width: 767px) {
+  #banner .container {
+    flex-direction: column;
+    padding-top: 32px;
+  }
+}
 #banner .container .subscribe-container,
 #banner .container .video-container {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
-  flex: 1 1 0%;
+  flex: 1;
 }
 @media (max-width: 767px) {
   #banner .container .subscribe-container {
@@ -556,13 +563,13 @@ label[id$=-error] {
 #banner .container .subscribe-container .content h1 {
   font-weight: 900;
   font-size: 48px;
-  line-height: 65px;
+  line-height: 135%;
   margin-top: 32px;
 }
 #banner .container .subscribe-container .content p {
   font-weight: 400;
   font-size: 24px;
-  line-height: 32px;
+  line-height: 135%;
   color: #fbe6e5;
   margin: 12px 0 24px;
 }
@@ -573,18 +580,30 @@ label[id$=-error] {
   }
   #banner .container .subscribe-container .content h1 {
     font-size: 32px;
-    line-height: 43px;
     max-width: 250px;
   }
   #banner .container .subscribe-container .content p {
     font-size: 20px;
-    line-height: 27px;
   }
   #banner .container .subscribe-container .content button {
     margin-bottom: 40px;
   }
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  #banner .container .subscribe-container .content {
+    text-align: center;
+  }
+  #banner .container .subscribe-container .content h1 {
+    max-width: initial;
+  }
+  #banner .container .subscribe-container .content button {
+    margin: 0 auto 40px;
+  }
+}
 #banner .container .video-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
   cursor: pointer;
 }
 @keyframes slime {
@@ -603,136 +622,18 @@ label[id$=-error] {
   box-shadow: rgba(16, 18, 19, 0.2) 0px 30px 50px 0px;
   animation: 5s ease-in-out 0s infinite normal none running slime;
 }
-#banner h1 {
-  font-size: 50 px;
-  font-weight: 600;
-  color: #fff;
-  text-align: left;
-  margin-bottom: 50px;
+@media (max-width: 767px) {
+  #banner .container .video-container {
+    align-items: flex-start;
+    flex: initial;
+  }
 }
-#banner ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-#banner ul li {
-  color: #fff;
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-#banner ul li span {
-  display: inline-block;
-  padding-left: 35px;
-}
-#banner ul li:before {
-  content: "\e95f";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  font-family: "fontello";
-  color: #413660;
-  border: 2px solid #413660;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: right;
-  border-radius: 50%;
-  margin: 5px 10px 10px 0;
-  position: absolute;
-}
-#banner .item {
-  position: relative;
-}
-#banner .item .slide_cont {
-  position: absolute;
-  top: 12%;
-  left: 100px;
-  color: #ffffff;
-  text-shadow: 0px 0px 8px rgb(150, 150, 150);
-}
-#banner .item .slide_cont span {
-  display: block;
-  line-height: 53px;
-}
-#banner .item .slide_cont .line-one {
-  font-weight: 300;
-  font-size: 55px;
-}
-#banner .item .slide_cont .line-two {
-  font-weight: 500;
-  font-size: 55px;
-}
-#banner .item .slide_cont .line-three {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 28px;
-  margin-top: 18px;
-}
-#banner .slick-slide img {
-  width: 100%;
-  object-fit: cover;
-}
-#banner .slick-prev,
-#banner .slick-next {
-  width: 40px;
-  height: 43px;
-  position: absolute;
-  z-index: 2;
-  padding: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  color: transparent;
-  background: transparent;
-  border: none;
-  -moz-transition: 0.3s all;
-  -webkit-transition: 0.3s all;
-  -o-transition: 0.3s all;
-  -ms-transition: 0.3s all;
-  transition: 0.3s all;
-  outline: none;
-}
-#banner .slick-prev:before,
-#banner .slick-next:before {
-  font-family: "LineAwesome";
-  font-size: 50px;
-  font-weight: bold;
-  color: #ffffff;
-}
-#banner .slick-prev {
-  left: 15px;
-}
-#banner .slick-prev:before {
-  content: "\f111";
-}
-#banner .slick-next {
-  right: 15px;
-}
-#banner .slick-next:before {
-  content: "\f112";
-}
-#banner .slick-dots {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 14px 0;
-  list-style-type: none;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50px);
-}
-#banner .slick-dots li {
-  padding: 0 5px;
-}
-#banner .slick-dots button {
-  display: block;
-  width: 14px;
-  height: 14px;
-  border: 1px solid #717171;
-  border-radius: 100%;
-  background-color: #ffffff;
-  text-indent: -9999px;
-}
-#banner .slick-dots button:focus {
-  outline: none;
+@media (min-width: 576px) and (max-width: 767px) {
+  #banner .container .video-container {
+    width: 300px;
+    height: 300px;
+    align-self: center;
+  }
 }
 
 /*===========================================*/
@@ -750,6 +651,7 @@ label[id$=-error] {
 #about h2 {
   max-width: 510px;
   font-weight: 300;
+  font-size: 64px;
   line-height: 135%;
   color: #413660;
   margin-bottom: 32px;
@@ -757,7 +659,7 @@ label[id$=-error] {
 @media (min-width: 768px) and (max-width: 1799px) {
   #about {
     background-image: url("/src/images/familia-recebendo-as-chaves-medium.png");
-    background-position: left center;
+    background-position: left top;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -766,13 +668,18 @@ label[id$=-error] {
   #about {
     background-image: url("/src/images/painting.png"), url("/src/images/familia-recebendo-as-chaves-min.png");
     background-position: center top, center bottom;
-    background-size: 100%;
+    background-size: 100%, contain;
     background-repeat: no-repeat;
     padding: 245px 0 0;
     margin-top: 0;
   }
   #about h2 {
     font-size: 48px;
+  }
+}
+@media (max-width: 575px) {
+  #about {
+    padding: 40% 0 0;
   }
 }
 #about .img-bg {
@@ -783,6 +690,425 @@ label[id$=-error] {
     display: block;
     max-width: 100%;
   }
+}
+#about .center > div {
+  margin-left: 55%;
+}
+@media (min-width: 768px) and (max-width: 1799px) {
+  #about .center > div {
+    margin-left: 45%;
+  }
+}
+@media (max-width: 767px) {
+  #about .center > div {
+    margin-left: 0;
+  }
+}
+#about .center .description {
+  display: grid;
+  gap: 40px;
+  max-width: 430px;
+  margin-bottom: 40px;
+}
+#about .center .description p,
+#about .center .description strong {
+  font-size: 18px;
+  line-height: 24px;
+}
+@media (max-width: 767px) {
+  #about .center .description {
+    margin-bottom: 62px;
+    gap: 24px;
+  }
+  #about .center .description p {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+/*===========================================*/
+/* This is the file with benefits style
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+#benefits {
+  display: flex;
+  padding-top: 180px;
+  background: url("/src/images/bg-benefits.png") no-repeat top center white;
+  background-size: 100%;
+  min-height: 100vh;
+}
+@media (max-width: 767px) {
+  #benefits {
+    padding: 80px 0;
+  }
+}
+#benefits .container {
+  text-align: center;
+}
+#benefits .container h2 {
+  font-weight: 200;
+  font-size: 64px;
+  line-height: 135%;
+  color: #21252b;
+}
+@media (max-width: 767px) {
+  #benefits .container h2 {
+    font-size: 48px;
+    line-height: 120%;
+  }
+}
+@media (max-width: 575px) {
+  #benefits .container h2 {
+    font-size: 38px;
+  }
+}
+#benefits .container h3 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #21252b;
+  margin-top: 12px;
+  margin-bottom: 120px;
+}
+#benefits .container .benefitCards-wrapper {
+  max-width: 930px;
+  margin: 0 auto 60px;
+}
+#benefits .container .benefitCards-wrapper.swiper {
+  padding-bottom: 40px;
+}
+#benefits .container .benefitCards-wrapper.swiper .swiper-pagination {
+  bottom: 0;
+}
+#benefits .container .benefitCards-wrapper.swiper .swiper-pagination .swiper-pagination-bullet {
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  background-color: rgb(201, 210, 216);
+  border-radius: 50%;
+  z-index: 15;
+  cursor: pointer;
+}
+#benefits .container .benefitCards-wrapper.swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: rgb(119, 139, 153);
+}
+#benefits .container .benefitCards-wrapper .benefitCard-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+#benefits .container .benefitCards-wrapper .benefitCard-wrapper svg {
+  width: 60px;
+}
+#benefits .container .benefitCards-wrapper .benefitCard-wrapper svg path {
+  fill: #da5d59;
+}
+#benefits .container .benefitCards-wrapper .benefitCard-wrapper .benefitCard-title {
+  font-weight: 900;
+  font-size: 32px;
+  text-align: center;
+  line-height: 135%;
+  color: #da5d59;
+}
+@media (max-width: 767px) {
+  #benefits .container .benefitCards-wrapper .benefitCard-wrapper .benefitCard-title {
+    font-size: 22px;
+  }
+}
+#benefits .container .benefitCards-wrapper .benefitCard-wrapper .benefitCard-description {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 135%;
+  text-align: center;
+  color: #363c43;
+}
+@media (max-width: 767px) {
+  #benefits .container .benefitCards-wrapper .benefitCard-wrapper .benefitCard-description {
+    font-size: 16px;
+  }
+}
+
+/*===========================================*/
+/* This is the file with plans style
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+#plans {
+  background-color: #413660;
+  padding: 160px 0;
+}
+@media (max-width: 767px) {
+  #plans {
+    padding: 60px 0;
+  }
+}
+#plans h2 {
+  max-width: 603px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 135%;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto 48px;
+}
+@media (max-width: 767px) {
+  #plans h2 {
+    font-size: 24px;
+    margin: 0px auto 24px;
+  }
+}
+#plans .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+#plans .wrapper {
+  position: relative;
+  margin-top: 35px;
+}
+#plans .wrapper .recommended {
+  width: fit-content;
+  white-space: nowrap;
+  padding: 8px 16px 32px;
+  margin-bottom: -23px;
+  border-radius: 8px 8px 0px 0px;
+  background: rgb(200, 73, 69);
+  position: absolute;
+  left: 0;
+  top: -35px;
+}
+#plans .wrapper .recommended span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 135%;
+  color: rgb(255, 255, 255);
+}
+#plans .wrapper .plan-card {
+  min-width: 275px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 32px;
+  background: rgb(255, 255, 255);
+  border-radius: 12px;
+  border: 2px solid #c84945;
+  position: relative;
+  z-index: 2;
+}
+#plans .wrapper .plan-card__header {
+  display: flex;
+  flex-direction: column;
+}
+#plans .wrapper .plan-card__header-name {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 135%;
+  color: #c84945;
+}
+#plans .wrapper .plan-card__header-amount {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 135%;
+  color: #000;
+}
+#plans .wrapper .plan-card__benefits {
+  display: flex;
+  flex-direction: column;
+  color: rgb(87, 89, 91);
+  gap: 8px;
+}
+#plans .wrapper .plan-card__benefits span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 135%;
+  margin-right: 8px;
+}
+#plans .wrapper .plan-card__value-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 135%;
+  color: #57595b;
+}
+#plans .wrapper .plan-card__value-promotional-price {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 135%;
+  color: rgb(65, 54, 96);
+}
+#plans .wrapper .plan-card__value-promotional-periodicity {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 135%;
+  color: rgb(65, 54, 96);
+}
+#plans .wrapper .plan-card__value-old {
+  position: relative;
+}
+#plans .wrapper .plan-card__value-old-strike {
+  height: 0px;
+  width: 149px;
+  border: 1px solid rgb(138, 140, 142);
+  position: absolute;
+  left: 0px;
+  top: calc(50% - 0px);
+}
+#plans .wrapper .plan-card__value-old-price {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 135%;
+  color: rgb(138, 140, 142);
+}
+#plans .wrapper .plan-card__value-old-periodicity {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 135%;
+  color: rgb(138, 140, 142);
+}
+#plans .wrapper .plan-card__value-old-note {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 135%;
+  color: rgb(87, 89, 91);
+}
+#plans .wrapper .plan-card button {
+  color: #ffffff;
+  border: 1px solid #c84945;
+  background-color: #c84945;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 14px 18px;
+  gap: 6px;
+  height: 52px;
+  border-radius: 70px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 23.68px;
+  outline: 0px;
+  transition: background 0.2s ease-in 0s;
+  cursor: pointer;
+  align-self: flex-start;
+}
+#plans .wrapper .plan-card button:hover {
+  background-color: #e0e1e2;
+  color: #c84945;
+}
+#plans .wrapper .plan-card button:active {
+  background-color: #000;
+  border: none;
+}
+#plans .wrapper .plan-card button:disabled {
+  color: #cfd0d1;
+  background-color: #f2f2f2;
+  border: none;
+  cursor: not-allowed;
+}
+#plans .wrapper .plan-card:hover {
+  background: linear-gradient(80.54deg, rgb(227, 71, 67) 0%, rgb(201, 58, 71) 13.58%, rgb(161, 38, 78) 36.85%, rgb(146, 31, 81) 48.49%, rgb(67, 51, 97) 96.98%);
+}
+#plans .wrapper .plan-card:hover * {
+  color: #fff;
+  transition: all 0.5s ease;
+}
+#plans .wrapper .plan-card:hover * svg {
+  fill: #fff;
+}
+#plans .wrapper .plan-card:hover * .plan-card__value-old-strike {
+  border-color: #fff;
+}
+#plans .wrapper .plan-card:hover button {
+  color: #c84945;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 14px 18px;
+  gap: 6px;
+  height: 52px;
+  border-radius: 70px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 23.68px;
+  outline: 0px;
+  transition: background 0.2s ease-in 0s;
+  cursor: pointer;
+}
+#plans .wrapper .plan-card:hover button:hover {
+  background-color: #e0e1e2;
+  color: #c84945;
+}
+#plans .wrapper .plan-card:hover button:active {
+  background-color: #000;
+  border: none;
+}
+#plans .wrapper .plan-card:hover button:disabled {
+  color: #cfd0d1;
+  background-color: #f2f2f2;
+  border: none;
+  cursor: not-allowed;
+}
+#plans .wrapper .plan-card.active {
+  background: linear-gradient(80.54deg, rgb(227, 71, 67) 0%, rgb(201, 58, 71) 13.58%, rgb(161, 38, 78) 36.85%, rgb(146, 31, 81) 48.49%, rgb(67, 51, 97) 96.98%);
+}
+#plans .wrapper .plan-card.active * {
+  color: #fff;
+  transition: all 0.5s ease;
+}
+#plans .wrapper .plan-card.active * svg {
+  fill: #fff;
+}
+#plans .wrapper .plan-card.active * .plan-card__value-old-strike {
+  border-color: #fff;
+}
+#plans .wrapper .plan-card.active button {
+  color: #c84945;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 14px 18px;
+  gap: 6px;
+  height: 52px;
+  border-radius: 70px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 23.68px;
+  outline: 0px;
+  transition: background 0.2s ease-in 0s;
+  cursor: pointer;
+}
+#plans .wrapper .plan-card.active button:hover {
+  background-color: #e0e1e2;
+  color: #c84945;
+}
+#plans .wrapper .plan-card.active button:active {
+  background-color: #000;
+  border: none;
+}
+#plans .wrapper .plan-card.active button:disabled {
+  color: #cfd0d1;
+  background-color: #f2f2f2;
+  border: none;
+  cursor: not-allowed;
 }
 
 /*===========================================*/
@@ -1038,7 +1364,7 @@ footer p {
 }
 
 .home {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

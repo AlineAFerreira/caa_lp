@@ -18,6 +18,7 @@
 }
 
 #banner {
+  display: flex;
   min-height: 75vh;
 
   @media (max-width: 767px) {
@@ -27,12 +28,17 @@
   .container {
     display: flex;
 
+    @media (max-width: 767px) {
+      flex-direction: column;
+      padding-top: 32px;
+    }
+
     .subscribe-container,
     .video-container {
       display: flex;
       -webkit-box-align: center;
       align-items: center;
-      flex: 1 1 0%;
+      flex: 1;
     }
 
     .subscribe-container {
@@ -48,14 +54,14 @@
         h1 {
           font-weight: 900;
           font-size: 48px;
-          line-height: 65px;
+          line-height: 135%;
           margin-top: 32px;
         }
 
         p {
           font-weight: 400;
           font-size: 24px;
-          line-height: 32px;
+          line-height: 135%;
           color: #fbe6e5;
           margin: 12px 0 24px;
         }
@@ -66,23 +72,36 @@
 
           h1 {
             font-size: 32px;
-            line-height: 43px;
             max-width: 250px;
           }
 
           p {
             font-size: 20px;
-            line-height: 27px;
           }
 
           button {
             margin-bottom: 40px;
           }
         }
+
+        @media (min-width: 576px) and (max-width: 767px) {
+          text-align: center;
+
+          h1 {
+            max-width: initial;
+          }
+
+          button {
+            margin: 0 auto 40px;
+          }
+        }
       }
     }
 
     .video-container {
+      display: flex;
+      align-items: center;
+      flex: 1;
       cursor: pointer;
 
       @keyframes slime {
@@ -104,157 +123,16 @@
         box-shadow: rgba(16, 18, 19, 0.2) 0px 30px 50px 0px;
         animation: 5s ease-in-out 0s infinite normal none running slime;
       }
-    }
-  }
 
-  h1 {
-    font-size: 50 px;
-    font-weight: 600;
-    color: #fff;
-    text-align: left;
-    margin-bottom: 50px;
-  }
-
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-
-    li {
-      color: #fff;
-      font-size: 18px;
-      margin-bottom: 12px;
-
-      span {
-        display: inline-block;
-        padding-left: 35px;
+      @media (max-width: 767px) {
+        align-items: flex-start;
+        flex: initial;
       }
 
-      &:before {
-        content: '\e95f';
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        font-family: 'fontello';
-        color: $main_color;
-        border: 2px solid $main_color;
-        font-size: 12px;
-        line-height: 15px;
-        text-align: right;
-        border-radius: 50%;
-        margin: 5px 10px 10px 0;
-        position: absolute;
-      }
-    }
-  }
-
-  .item {
-    position: relative;
-
-    .slide_cont {
-      position: absolute;
-      top: 12%;
-      left: 100px;
-      color: $pure_white;
-      text-shadow: 0px 0px 8px rgba(150, 150, 150, 1);
-
-      span {
-        display: block;
-        line-height: 53px;
-      }
-
-      .line-one {
-        font-weight: 300;
-        font-size: 55px;
-      }
-
-      .line-two {
-        font-weight: 500;
-        font-size: 55px;
-      }
-
-      .line-three {
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 28px;
-        margin-top: 18px;
-      }
-    }
-  }
-
-  .slick-slide {
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .slick-prev,
-  .slick-next {
-    width: 40px;
-    height: 43px;
-    position: absolute;
-    z-index: 2;
-    padding: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: transparent;
-    background: transparent;
-    border: none;
-    -moz-transition: 0.3s all;
-    -webkit-transition: 0.3s all;
-    -o-transition: 0.3s all;
-    -ms-transition: 0.3s all;
-    transition: 0.3s all;
-    outline: none;
-
-    &:before {
-      font-family: 'LineAwesome';
-      font-size: 50px;
-      font-weight: bold;
-      color: $pure_white;
-    }
-  }
-
-  .slick-prev {
-    left: 15px;
-    &:before {
-      content: '\F111';
-    }
-  }
-
-  .slick-next {
-    right: 15px;
-    &:before {
-      content: '\F112';
-    }
-  }
-
-  .slick-dots {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 14px 0;
-    list-style-type: none;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50px);
-
-    li {
-      padding: 0 5px;
-    }
-
-    button {
-      display: block;
-      width: 14px;
-      height: 14px;
-      border: 1px solid $medium_gray;
-      border-radius: 100%;
-      background-color: $pure_white;
-      text-indent: -9999px;
-
-      &:focus {
-        outline: none;
+      @media (min-width: 576px) and (max-width: 767px) {
+        width: 300px;
+        height: 300px;
+        align-self: center;
       }
     }
   }

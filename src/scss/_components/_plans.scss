@@ -1,0 +1,205 @@
+/*===========================================*/
+/* This is the file with plans style
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+
+#plans {
+  background-color: #413660;
+  padding: 160px 0;
+
+  @media (max-width: 767px) {
+    padding: 60px 0;
+  }
+
+  h2 {
+    max-width: 603px;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 135%;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto 48px;
+
+    @media (max-width: 767px) {
+      font-size: 24px;
+      margin: 0px auto 24px;
+    }
+  }
+
+  @mixin planCard() {
+    background: linear-gradient(
+      80.54deg,
+      rgb(227, 71, 67) 0%,
+      rgb(201, 58, 71) 13.58%,
+      rgb(161, 38, 78) 36.85%,
+      rgb(146, 31, 81) 48.49%,
+      rgb(67, 51, 97) 96.98%
+    );
+    * {
+      color: #fff;
+
+      svg {
+        fill: #fff;
+      }
+
+      .plan-card__value-old-strike {
+        border-color: #fff;
+      }
+
+      transition: all 0.5s ease;
+    }
+
+    button {
+      @include btn-mixin(1px solid $pure_white, $pure_white, #c84945, #e0e1e2, #c84945);
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .wrapper {
+    position: relative;
+    margin-top: 35px;
+
+    .recommended {
+      width: fit-content;
+      white-space: nowrap;
+      padding: 8px 16px 32px;
+      margin-bottom: -23px;
+      border-radius: 8px 8px 0px 0px;
+      background: rgb(200, 73, 69);
+      position: absolute;
+      left: 0;
+      top: -35px;
+
+      span {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 135%;
+        color: rgb(255, 255, 255);
+      }
+    }
+
+    .plan-card {
+      min-width: 275px;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      gap: 32px;
+      background: rgb(255, 255, 255);
+      border-radius: 12px;
+      border: 2px solid #c84945;
+      position: relative;
+      z-index: 2;
+
+      &__header {
+        display: flex;
+        flex-direction: column;
+
+        &-name {
+          font-weight: 800;
+          font-size: 30px;
+          line-height: 135%;
+          color: #c84945;
+        }
+
+        &-amount {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 135%;
+          color: #000;
+        }
+      }
+
+      &__benefits {
+        display: flex;
+        flex-direction: column;
+        color: rgb(87, 89, 91);
+        gap: 8px;
+
+        span {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 135%;
+          margin-right: 8px;
+        }
+      }
+
+      &__value {
+        &-title {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 135%;
+          color: #57595b;
+        }
+
+        &-promotional {
+          &-price {
+            font-weight: 700;
+            font-size: 34px;
+            line-height: 135%;
+            color: rgb(65, 54, 96);
+          }
+
+          &-periodicity {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 135%;
+            color: rgb(65, 54, 96);
+          }
+        }
+        &-old {
+          position: relative;
+
+          &-strike {
+            height: 0px;
+            width: 149px;
+            border: 1px solid rgb(138, 140, 142);
+            position: absolute;
+            left: 0px;
+            top: calc(50% - 0px);
+          }
+
+          &-price {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 135%;
+            color: rgb(138, 140, 142);
+          }
+
+          &-periodicity {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 135%;
+            color: rgb(138, 140, 142);
+          }
+
+          &-note {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 135%;
+            color: rgb(87, 89, 91);
+          }
+        }
+      }
+
+      button {
+        @include btn-mixin(1px solid #c84945, #c84945, $pure_white, #e0e1e2, #c84945);
+        align-self: flex-start;
+      }
+
+      &:hover {
+        @include planCard;
+      }
+
+      &.active {
+        @include planCard;
+      }
+    }
+  }
+}

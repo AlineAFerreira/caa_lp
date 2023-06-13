@@ -1,0 +1,114 @@
+/*===========================================*/
+/* This is the file with benefits style
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+
+#benefits {
+  display: flex;
+  padding-top: 180px;
+  background: url('/src/images/bg-benefits.png') no-repeat top center white;
+  background-size: 100%;
+  min-height: 100vh;
+
+  @media (max-width: 767px) {
+    padding: 80px 0;
+  }
+
+  .container {
+    text-align: center;
+
+    h2 {
+      font-weight: 200;
+      font-size: 64px;
+      line-height: 135%;
+      color: #21252b;
+
+      @media (max-width: 767px) {
+        font-size: 48px;
+        line-height: 120%;
+      }
+
+      @media (max-width: 575px) {
+        font-size: 38px;
+      }
+    }
+
+    h3 {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: #21252b;
+      margin-top: 12px;
+      margin-bottom: 120px;
+    }
+
+    .benefitCards-wrapper {
+      max-width: 930px;
+      margin: 0 auto 60px;
+
+      &.swiper {
+        padding-bottom: 40px;
+
+        .swiper-pagination {
+          bottom: 0;
+
+          .swiper-pagination-bullet {
+            opacity: 1;
+            width: 12px;
+            height: 12px;
+            background-color: rgb(201, 210, 216);
+            border-radius: 50%;
+            z-index: 15;
+            cursor: pointer;
+
+            &-active {
+              background-color: rgb(119, 139, 153);
+            }
+          }
+        }
+      }
+
+      .benefitCard-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+
+        svg {
+          width: 60px;
+
+          path {
+            fill: #da5d59;
+          }
+        }
+
+        .benefitCard-title {
+          font-weight: 900;
+          font-size: 32px;
+          text-align: center;
+          line-height: 135%;
+          color: #da5d59;
+
+          @media (max-width: 767px) {
+            font-size: 22px;
+          }
+        }
+
+        .benefitCard-description {
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 135%;
+          text-align: center;
+          color: #363c43;
+
+          @media (max-width: 767px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
