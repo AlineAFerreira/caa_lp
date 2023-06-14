@@ -544,7 +544,7 @@ label[id$=-error] {
 }
 @media (max-width: 767px) {
   #about {
-    background-image: url("../src/images/painting.png"), url("../../src/images/familia-recebendo-as-chaves-min.png");
+    background-image: url("../images/painting.png"), url("../images/familia-recebendo-as-chaves-min.png");
     background-position: center top, center bottom;
     background-size: 100%, contain;
     background-repeat: no-repeat;
