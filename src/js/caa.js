@@ -190,6 +190,7 @@ const caa = {
           addClass = '';
         var form = $(form);
         var url = '';
+        console.log(form.serialize());
         return;
         $.ajax({
           type: 'POST',
@@ -275,9 +276,17 @@ const caa = {
   handleChange: elem => {
     elem.value ? elem.classList.add('has-value') : elem.classList.remove('has-value');
   },
-  handleSelectedPlan: ({ id, name }) => {
-    console.log(name);
-    caa.runTo('#subscribe', -60, 500);
-    SELECTED_PLAN = name;
+  handleSelectedPlan: (e, obj) => {
+    const parent = $(e).parent();
+    $('.plan-card:not(#' + parent.attr('id') + ')').removeClass('active');
+
+    if (parent.hasClass('active')) {
+      parent.removeClass('active');
+      SELECTED_PLAN = null;
+    } else {
+      parent.addClass('active');
+      SELECTED_PLAN = obj.name;
+      caa.runTo('#subscribe', -60, 500);
+    }
   }
 };

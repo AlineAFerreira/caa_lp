@@ -62,10 +62,7 @@
 
     <!-- Stylesheet ================================================== -->
     <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="./src/libs/swiperjs/swiper-bundle.min.css" />
   </head>
 
   <body>
@@ -298,7 +295,7 @@
         <h2>Aproveite nossas condições especiais e faça parte da 1ª Turma CAA.</h2>
         <div class="container">
           <div class="wrapper" data-testid="planCard-Básico">
-            <div class="plan-card" data-testid="planCard-Básico">
+            <div class="plan-card" id="basic" data-testid="planCard-Básico">
               <div class="plan-card__header">
                 <span data-testid="plan-card__header-name" class="plan-card__header-name"
                   >Básico</span
@@ -412,7 +409,7 @@
               <button
                 data-testid="planCard-Básico-button"
                 class="btn-primary"
-                onclick="caa.handleSelectedPlan({id: 0, name: 'Básico'})"
+                onclick="caa.handleSelectedPlan(this, {id: 0, name: 'Básico'})"
               >
                 Eu quero
               </button>
@@ -425,7 +422,7 @@
                 >Recomendado para corretores</span
               >
             </div>
-            <div class="plan-card">
+            <div class="plan-card" id="essential">
               <div class="plan-card__header">
                 <span data-testid="plan-card__header-name" class="plan-card__header-name"
                   >Essencial</span
@@ -539,7 +536,7 @@
               <button
                 data-testid="planCard-Básico-button"
                 class="btn-primary"
-                onclick="caa.runTo('#subscribe', -60, 500)"
+                onclick="caa.handleSelectedPlan(this, {id: 1, name: 'Essencial'})"
               >
                 Eu quero
               </button>
@@ -547,7 +544,7 @@
           </div>
 
           <div class="wrapper" data-testid="planCard-Premium">
-            <div class="plan-card" data-testid="planCard-Premium">
+            <div class="plan-card" id="premium" data-testid="planCard-Premium">
               <div class="plan-card__header">
                 <span data-testid="plan-card__header-name" class="plan-card__header-name"
                   >Premium</span
@@ -664,7 +661,7 @@
               <button
                 data-testid="planCard-Premium-button"
                 class="btn-primary"
-                onclick="caa.handleSelectedPlan({id: 1, name: 'Essencial'})"
+                onclick="caa.handleSelectedPlan(this, {id: 2, name: 'Premium'})"
               >
                 Eu quero
               </button>
@@ -677,7 +674,7 @@
                 >Recomendado para imobiliárias</span
               >
             </div>
-            <div class="plan-card">
+            <div class="plan-card" id="exclusive">
               <div class="plan-card__header">
                 <span data-testid="plan-card__header-name" class="plan-card__header-name"
                   >Exclusivo</span
@@ -794,7 +791,7 @@
               <button
                 data-testid="planCard-Exclusivo-button"
                 class="btn-primary"
-                onclick="caa.handleSelectedPlan({id: 3, name: 'Exclusivo'})"
+                onclick="caa.handleSelectedPlan(this, {id: 3, name: 'Exclusivo'})"
               >
                 Eu quero
               </button>
@@ -949,7 +946,7 @@
     <!--JS for MAGNIFIC POPUP & ALL SCRIPTS & CALLS-->
     <script type="text/javascript" src="src/js/caa.js"></script>
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./src/libs/swiperjs/swiper-bundle.min.js"></script>
     <script type="text/javascript">
       $(function () {
         caa.init();
