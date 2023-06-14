@@ -188,6 +188,9 @@ const caa = {
         const url =
           'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
 
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
         const urlencoded = new URLSearchParams();
         urlencoded.append('first_name', $('#name').val());
         urlencoded.append('last_name', $('#lastname').val());
@@ -203,12 +206,9 @@ const caa = {
           urlencoded.append('00NHY000000Pv5p', caa.SELECTED_PLAN);
         }
 
-        const myHeaders = new Headers();
-        myHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
-
         const requestOptions = {
           method: 'POST',
-          headers: myHeaders,
+          headers: headers,
           body: urlencoded,
           mode: 'no-cors'
         };
@@ -248,6 +248,19 @@ const caa = {
       $('.wrapper-select').addClass('has-value').removeClass('has-error');
       $('#profile_type').val($('#selected div p').text());
       caa.checkValidation();
+    });
+
+    $(document).on('click', function (event) {
+      var $target = $(event.target);
+      if (!$target.closest('.wrapper-select').length) {
+        $('.select_wrap').removeClass('active');
+      }
+    });
+
+    $('#creci').on('keyup', function (e) {
+      if (e.which === 9) {
+        $('.select_wrap').focus().addClass('active');
+      }
     });
   },
 
