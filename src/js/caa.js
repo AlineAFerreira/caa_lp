@@ -215,12 +215,7 @@ const caa = {
 
         fetch(url, requestOptions)
           .then(response => response.text())
-          .then(_ =>
-            openToast({
-              title: strings.success.successSent,
-              type: ToastTypes.SUCCESS
-            })
-          )
+          .then(data => alert('Enviado com sucesso!', data))
           .catch(error => {
             alert('Error', error);
           })
@@ -257,7 +252,7 @@ const caa = {
       }
     });
 
-    $('#creci').on('keyup', function (e) {
+    $('#creci').on('keydown', function (e) {
       if (e.which === 9) {
         $('.select_wrap').focus().addClass('active');
       }

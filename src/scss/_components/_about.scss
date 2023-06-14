@@ -7,7 +7,7 @@
 #about {
   margin-top: -25px;
   padding: 196px 0 90px;
-  background: url('/src/images/familia-recebendo-as-chaves.png') no-repeat left center;
+  background: url('../../images/familia-recebendo-as-chaves.png') no-repeat left center;
   background-size: cover;
   position: relative;
 
@@ -21,15 +21,15 @@
   }
 
   @media (min-width: 768px) and (max-width: 1799px) {
-    background-image: url('/src/images/familia-recebendo-as-chaves-medium.png');
+    background-image: url('../../images/familia-recebendo-as-chaves-medium.png');
     background-position: left top;
     background-size: cover;
     background-repeat: no-repeat;
   }
 
   @media (max-width: 767px) {
-    background-image: url('/src/images/painting.png'),
-      url('/src/images/familia-recebendo-as-chaves-min.png');
+    background-image: url('../../images/painting.png'),
+      url('../../images/familia-recebendo-as-chaves-min.png');
     background-position: center top, center bottom;
     background-size: 100%, contain;
     background-repeat: no-repeat;
