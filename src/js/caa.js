@@ -184,44 +184,49 @@ const caa = {
         });
       },
       submitHandler: function (form) {
-        console.log('submit');
-        $('.submit').attr('disabled', true);
-        var msg,
-          addClass = '';
-        var form = $(form);
-        var url = '';
-        console.log(form.serialize());
-        return;
-        $.ajax({
-          type: 'POST',
-          url: url,
-          data: form.serialize(),
-          beforeSend: function (data) {
-            $('#alertMsg.alert')
-              .addClass('hidden')
-              .removeClass('alert-success')
-              .removeClass('alert-danger');
-            $('#btn-send').text('Enviando...').attr('disabled', true);
-          },
+        $('#btn-send').attr('disabled', true).text('Enviando...');
+        const url =
+          'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
 
-          success: function (data) {
-            console.log('retorno', data);
-            if (data.status) {
-              addClass = 'alert-success';
-              msg = 'Mensagem enviada com sucesso!';
-              form[0].reset();
-            } else {
-              addClass = 'alert-danger';
-              msg = 'Ocorreu um erro. Tente novamente mais tarde!';
-            }
-          },
+        const urlencoded = new URLSearchParams();
+        urlencoded.append('first_name', $('#name').val());
+        urlencoded.append('last_name', $('#lastname').val());
+        urlencoded.append('email', $('#email').val());
+        urlencoded.append('phone', $('#phone').val());
+        urlencoded.append('00NHY000000PuXY', $('#creci').val());
+        urlencoded.append('00NHY000000PuXT', $('#cpf').val());
+        urlencoded.append('00NHY000000Pv5u', $('#birthdate').val());
+        urlencoded.append('00NHY000000PuXd', $('#profile_type').val());
+        urlencoded.append('oid', '00D5e000001O9od');
+        urlencoded.append('lead_source', 'Web');
+        if (caa.SELECTED_PLAN) {
+          urlencoded.append('00NHY000000Pv5p', caa.SELECTED_PLAN);
+        }
 
-          complete: function () {
-            $('#btn-send').text('Enviar').attr('disabled', false);
-            $('#alertMsg.alert').removeClass('hidden').addClass(addClass);
-            $('#alertMsg .text').text(msg);
-          }
-        });
+        const myHeaders = new Headers();
+        myHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
+
+        const requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: urlencoded,
+          mode: 'no-cors'
+        };
+
+        fetch(url, requestOptions)
+          .then(response => response.text())
+          .then(_ =>
+            openToast({
+              title: strings.success.successSent,
+              type: ToastTypes.SUCCESS
+            })
+          )
+          .catch(error => {
+            alert('Error', error);
+          })
+          .finally(() => {
+            $('#btn-send').attr('disabled', false).text('Enviar dados');
+          });
       }
     });
 
@@ -243,10 +248,6 @@ const caa = {
       $('.wrapper-select').addClass('has-value').removeClass('has-error');
       $('#profile_type').val($('#selected div p').text());
       caa.checkValidation();
-    });
-
-    $().on('click', () => {
-      SELECTED_PLAN = this.value;
     });
   },
 
@@ -276,16 +277,17 @@ const caa = {
   handleChange: elem => {
     elem.value ? elem.classList.add('has-value') : elem.classList.remove('has-value');
   },
+
   handleSelectedPlan: (e, obj) => {
     const parent = $(e).parent();
     $('.plan-card:not(#' + parent.attr('id') + ')').removeClass('active');
 
     if (parent.hasClass('active')) {
       parent.removeClass('active');
-      SELECTED_PLAN = null;
+      caa.SELECTED_PLAN = null;
     } else {
       parent.addClass('active');
-      SELECTED_PLAN = obj.name;
+      caa.SELECTED_PLAN = obj.name;
       caa.runTo('#subscribe', -60, 500);
     }
   }
