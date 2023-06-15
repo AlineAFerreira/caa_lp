@@ -215,9 +215,9 @@ const caa = {
 
         fetch(url, requestOptions)
           .then(response => response.text())
-          .then(data => alert('Enviado com sucesso!', data))
+          .then(data => $('.modalSuccess').css('display', 'grid'))
           .catch(error => {
-            alert('Error', error);
+            toastr.error('Ocorreu um erro ao enviar os dados.');
           })
           .finally(() => {
             $('#btn-send').attr('disabled', false).text('Enviar dados');
@@ -257,6 +257,11 @@ const caa = {
         $('.select_wrap').focus().addClass('active');
       }
     });
+  },
+
+  closeModal: () => {
+    $('.modal').css('display', 'none');
+    $('.modal iframe').attr('src', $('.modal iframe').attr('src'));
   },
 
   checkValidation: function () {

@@ -63,6 +63,7 @@
     <!-- Stylesheet ================================================== -->
     <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
     <link rel="stylesheet" href="./src/libs/swiperjs/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./src/libs/toastr/toastr.min.css" />
   </head>
 
   <body>
@@ -87,7 +88,7 @@
               </button>
             </div>
           </div>
-          <div class="video-container">
+          <div class="video-container" onclick="$('.modalVideo').css('display','grid')">
             <img src="src/images/temp-capa.png" alt="Capa video" />
           </div>
         </div>
@@ -957,17 +958,34 @@
       <!-- / Footer Section -->
     </div>
 
-    <!-- <div class="modal">
+    <div class="modalSuccess modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Parabéns!</h2>
-          <span class="close">&times;</span>
+          <img src="src/images/checked.svg" alt="checked" />
         </div>
         <div class="modal-body">
+          <h2>Dados enviados</h2>
           <p>Aguarde que logo teremos mais novidades.</p>
         </div>
+        <button class="btn-primary" onclick="caa.closeModal()">ok</button>
       </div>
-    </div> -->
+    </div>
+
+    <div class="modalVideo modal">
+      <button id="closeModalVideo" class="btn-primary" onclick="caa.closeModal()">
+        Fechar
+      </button>
+      <div class="modal-content">
+        <iframe
+          aria-label="Faça parte da primeira turma do CAA"
+          src="https://www.youtube.com/embed/FlLZ6hPxrY4"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+          picture-in-picture"
+          class="yt_player_iframe"
+        ></iframe>
+      </div>
+    </div>
 
     <!-- Javascripts -->
     <script type="text/javascript" src="src/libs-js/jquery.min.js"></script>
@@ -977,8 +995,27 @@
     <script type="text/javascript" src="src/libs-js/jquery.mask.min.js"></script>
     <!--JS for MAGNIFIC POPUP & ALL SCRIPTS & CALLS-->
     <script type="text/javascript" src="src/js/caa.js"></script>
-    <!-- Swiper JS -->
+    <!-- Libs -->
     <script src="./src/libs/swiperjs/swiper-bundle.min.js"></script>
+    <script src="./src/libs/toastr/toastr.min.js"></script>
+
+    <!-- <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NBQJ3HR');
+    </script>
+    <script
+      src="https://tag.goadopt.io/injector.js?website_code=e2ba2977-2a03-46ae-93b1-0e9190f6e7c8"
+      className="adopt-injector"
+      strategy="afterInteractive"
+    ></script> -->
     <script type="text/javascript">
       $(function () {
         caa.init();
@@ -998,6 +1035,24 @@
           speed: 500
         });
       });
+
+      toastr.options = {
+        closeButton: true,
+        debug: false,
+        newestOnTop: false,
+        progressBar: true,
+        positionClass: 'toast-bottom-right',
+        preventDuplicates: true,
+        onclick: null,
+        showDuration: '1000',
+        hideDuration: '1000',
+        timeOut: '8000',
+        extendedTimeOut: '1000',
+        showEasing: 'swing',
+        hideEasing: 'linear',
+        showMethod: 'fadeIn',
+        hideMethod: 'fadeOut'
+      };
     </script>
   </body>
 </html>

@@ -1,0 +1,27 @@
+/*===========================================*/
+/* This is the file with toast styles
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+
+#toast-container {
+  .toast-error {
+    background-image: none;
+    background-color: #fff;
+    color: #000;
+    padding: 16px;
+    height: 80px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+
+    .toast-close-button {
+      color: #000;
+    }
+
+    .toast-progress {
+      background-color: $alert-red;
+      opacity: 0.9;
+    }
+  }
+}

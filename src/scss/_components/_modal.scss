@@ -1,0 +1,65 @@
+/*===========================================*/
+/* This is the file with modal styles
+/* Theme Author: Aline Ferreira
+/* Version: 1.0
+==============================================*/
+
+.modal {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: none;
+  place-items: center;
+
+  &.modalSuccess {
+    .modal-content {
+      @media (max-width: 575px) {
+        width: calc(100vw - 24px);
+        min-width: initial;
+      }
+    }
+  }
+}
+
+.modal-content {
+  min-width: 423px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  .modal-header {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+
+    img {
+      margin-top: -10px;
+    }
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    line-height: 135%;
+    text-align: center;
+  }
+
+  button {
+    height: 32px;
+    padding: 8px 32px;
+    text-transform: uppercase;
+  }
+}
